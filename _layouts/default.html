@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial,
+          sans-serif;
+        background-color: #36bf3f;
+        color: #2b2b2b;
+        min-height: 100dvh;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 720px;
+        width: min(92vw, 720px);
+        margin: 0 auto;
+        padding: 24px;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .panel {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: clamp(24px, 4vw, 48px);
+        text-align: center;
+        box-shadow: 0px 7px 14px 0px rgba(60, 66, 87, 0.12),
+          0px 3px 6px 0px rgba(0, 0, 0, 0.12);
+        width: 100%;
+        max-width: 720px;
+        margin: 0;
+      }
+
+      .logo {
+        width: clamp(200px, 35vw, 340px);
+        height: auto;
+        margin: 0 auto 8px auto;
+        display: block;
+      }
+
+      h1 {
+        color: #383838;
+        font-size: 2rem;
+        margin-bottom: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      h2 {
+        color: #5e5e5e;
+        font-size: 1.25rem;
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+
+      p {
+        color: #2b2b2b;
+        font-size: 1rem;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+
+      .highlight {
+        color: #36bf3f;
+        font-weight: bold;
+      }
+
+      .footer {
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid #ebebeb;
+        color: #5e5e5e;
+      }
+
+      a {
+        color: #5ba9d9;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #3eb4cf;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 16px;
+        }
+
+        .panel {
+          margin: 8px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {% include logo.svg %}
+      <div class="panel">
+        {{ content }}
+      </div>
+    </div>
+  </body>
+</html>

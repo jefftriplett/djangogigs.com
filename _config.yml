@@ -1,0 +1,15 @@
+title: Django Gigs - 2008 - 2025
+description: >-
+  Django Gigs has retired. After 17 years of service to the Django community,
+  thank you for being part of the journey.
+lang: en
+url: "https://djangogigs.com"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - justfile
+  - vendor/
+  - .github/
